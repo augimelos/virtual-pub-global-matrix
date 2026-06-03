@@ -1,0 +1,29 @@
+{
+  "name": "virtual-pub-global-matrix",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx apps packages --report-unused-disable-directives",
+    "lint:fix": "eslint --ext .ts,.tsx apps packages --fix --report-unused-disable-directives",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md}\"",
+    "build": "npm run build --workspace=@virtual-pub/api-gateway && npm run build --workspace=@virtual-pub/discord-bot && npm run build --workspace=@virtual-pub/embedded-activity-ui",
+    "typecheck": "npm run typecheck --workspace=@virtual-pub/api-gateway && npm run typecheck --workspace=@virtual-pub/discord-bot && npm run typecheck --workspace=@virtual-pub/embedded-activity-ui",
+    "dev": "concurrently -k \"npm run dev --workspace=@virtual-pub/api-gateway\" \"npm run dev --workspace=@virtual-pub/discord-bot\" \"npm run dev --workspace=@virtual-pub/embedded-activity-ui\"",
+    "dev:api": "npm run dev --workspace=@virtual-pub/api-gateway",
+    "dev:bot": "npm run dev --workspace=@virtual-pub/discord-bot",
+    "dev:ui": "npm run dev --workspace=@virtual-pub/embedded-activity-ui"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "typescript": "^5.7.3",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3"
+  }
+}
