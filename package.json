@@ -18,12 +18,12 @@
     "dev:ui": "npm run dev --workspace=@virtual-pub/embedded-activity-ui"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0",
-    "typescript": "^5.7.3",
-    "eslint": "^8.50.0",
-    "@typescript-eslint/parser": "^6.11.0",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.50.0",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.8.3"
+    "prettier": "^3.8.3",
+    "typescript": "^5.9.3"
   }
 }
